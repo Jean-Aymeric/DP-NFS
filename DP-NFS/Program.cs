@@ -1,17 +1,29 @@
 ﻿using DP_NFS.client;
 using DP_NFS.pizza;
+using DP_NFS.pizza.builder;
+using DP_NFS.pizza.product.factoryProduct;
 using System;
 
 namespace DP_NFS {
     class Program {
         static void Main(string[] args) {
-            Client client = new Client();
+            new FactoryAnchovy();
+            new FactoryBacon();
+            new FactoryEmmental();
+            new FactoryGorgonzola();
+            new FactoryMissingProduct();
+            new FactoryPepper();
+            new FactoryVeganBacon();
+            new FactoryVeganCheese();
+
             new FactoryFourCheeses();
-            client.Eat();
             new FactoryCalzone();
-            client.Eat();
             new FactoryRoman();
-            client.Eat();
+
+
+            Client client = new Client();
+            client.Eat(new ClassicPizza());
+            client.Eat(new VeganPizza());
         }
     }
 }
