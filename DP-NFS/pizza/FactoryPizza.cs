@@ -36,7 +36,7 @@ namespace DP_NFS.pizza {
             return this.PizzaName == pizzaName;
         }
 
-        public static IPizza Make(String pizzaName) {
+        public static IDrink Make(String pizzaName) {
             foreach(FactoryPizza factoryPizza in FactoryPizza.factoriesPizza) {
                 if (factoryPizza.DoesItMake(pizzaName)) {
                     return factoryPizza.Make();
@@ -45,6 +45,6 @@ namespace DP_NFS.pizza {
             return null;
         }
 
-        public abstract IPizza Make();
+        public abstract IDrink Make();
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace DP_NFS.pizza {
-    internal abstract class Pizza : IPizza {
+    internal abstract class Pizza : IDrink {
         public String Name { get; set; }
 
         public Pizza(string name) {

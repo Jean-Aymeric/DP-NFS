@@ -9,7 +9,7 @@ namespace DP_NFS.pizza {
         public FactoryFourCheeses() : base("4 fromages") {
         }
 
-        public override IPizza Make() {
+        public override IDrink Make() {
             return new FourCheeses();
         }
     }

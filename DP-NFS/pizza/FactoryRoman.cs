@@ -10,7 +10,7 @@ namespace DP_NFS.pizza {
 
         }
 
-        public override IPizza Make() {
+        public override IDrink Make() {
             return new Romaine();
         }
     }
