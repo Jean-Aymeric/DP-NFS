@@ -17,6 +17,7 @@ namespace DP_NFS.parser.ChainOfResponsability {
             TokenHandler last = this;
             last = TokenHandlerChain.AddNext(last, new AndTokenHandler());
             last = TokenHandlerChain.AddNext(last, new OrTokenHandler());
+            last = TokenHandlerChain.AddNext(last, new NOrTokenHandler());
             last = TokenHandlerChain.AddNext(last, new BooleanMatrix2x2TokenHandler());
             last = TokenHandlerChain.AddNext(last, new ErrorTokenHandler());
         }
