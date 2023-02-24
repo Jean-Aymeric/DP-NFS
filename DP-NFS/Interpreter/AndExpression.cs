@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DP_NFS.Interpreter {
     class AndExpression : BinaryExpression {
-        public AndExpression(IExpression left, IExpression right) : base("And", left, right) {
+        public AndExpression(IExpression left, IExpression right) : base(left, right) {
         }
 
         public override void Interpreter(Context context) {

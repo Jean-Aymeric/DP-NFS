@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DP_NFS.Interpreter {
     abstract class TerminalExpression : Expression {
-        protected TerminalExpression(string name) : base(name) {
+        protected TerminalExpression() : base() {
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DP_NFS.Interpreter {
     class NotExpression : UnaryExpression {
-        public NotExpression(IExpression expression) : base("Not", expression) { }
+        public NotExpression(IExpression expression) : base(expression) { }
 
         public override void Interpreter(Context context) {
             this.Expression.Interpreter(context);

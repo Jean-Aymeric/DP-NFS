@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DP_NFS.Interpreter {
     abstract class BinaryExpression : NaryExpression {
-        protected BinaryExpression(string name, IExpression left, IExpression right) : base(name) {
+        protected BinaryExpression(IExpression left, IExpression right) : base() {
             this.Expressions.Add(left);
             this.Expressions.Add(right);
         }

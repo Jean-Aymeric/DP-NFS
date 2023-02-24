@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DP_NFS.Interpreter {
     abstract class UnaryExpression : Expression {
-        protected UnaryExpression(string name, IExpression expression) : base(name) {
+        protected UnaryExpression(IExpression expression) : base() {
             this.Expression = expression;
         }
 

@@ -1,20 +1,16 @@
 ﻿using DP_NFS.Interpreter;
+using DP_NFS.parser;
 using System;
 
 namespace DP_NFS {
     class Program {
         static void Main(string[] args) {
+            String operation = "or(and((0,0,0,0), (1,1,1,1)), or((1,0,1,0), (0,0,1,1)))";
+            IExpression expression = Parser.Parse(operation);
+             
             Context context = new Context();
-            IExpression expression = new AndExpression(
-                                        new NotExpression(
-                                            new BooleanMatrix2x2Expression(new BooleanExpression("True"), new BooleanExpression("False"),
-                                                                           new BooleanExpression("False"), new BooleanExpression("True"))
-                                        ),
-                                        new BooleanMatrix2x2Expression(new BooleanExpression("True"), new BooleanExpression("True"),
-                                                                        new BooleanExpression("False"), new BooleanExpression("False"))
-                                     );
             expression.Interpreter(context);
-            Console.WriteLine(context.Matrix2x2);
+            Console.WriteLine(operation + " = " + context);
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DP_NFS.Interpreter {
     abstract class NaryExpression : Expression {
-        protected NaryExpression(string name) : base(name) {
+        protected NaryExpression() : base() {
             this.Expressions = new List<IExpression>();
         }
 
