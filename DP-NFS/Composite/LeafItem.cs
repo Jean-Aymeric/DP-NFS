@@ -19,5 +19,9 @@ namespace DP_NFS.Composite {
         public override double Weight() {
             return this._weight;
         }
+
+        public override IterableItem GetIterableItem() {
+            return new IterableItem(this);
+        }
     }
 }

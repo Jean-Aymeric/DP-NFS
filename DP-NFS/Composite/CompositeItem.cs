@@ -49,5 +49,13 @@ namespace DP_NFS.Composite {
             }
             return null;
         }
+
+        public override IterableItem GetIterableItem() {
+            IterableItem iterableItems = new(this);
+            foreach (Item item in this.Items) {
+                iterableItems.Merge(item.GetIterableItem());
+            }
+            return iterableItems;
+        }
     }
 }

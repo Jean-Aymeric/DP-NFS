@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DP_NFS.Composite {
-    abstract class Item {
+    abstract class Item : IEnumerable<Item> {
         protected String _label;
         protected double _weight;
         
@@ -21,5 +22,15 @@ namespace DP_NFS.Composite {
         public abstract String Label();
         public abstract double Weight();
         public abstract Item GetItemByLabel(String label);
+
+        public abstract IterableItem GetIterableItem();
+
+        public IEnumerator<Item> GetEnumerator() {
+            return this.GetIterableItem().GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() {
+            return this.GetIterableItem().GetEnumerator();
+        }
     }
 }

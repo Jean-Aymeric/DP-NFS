@@ -18,6 +18,11 @@ namespace DP_NFS {
             Console.WriteLine(cart.Label());
             Console.WriteLine(cart.Weight());
             Console.WriteLine(cart.GetItemByLabel("Cerise").Label());
+
+            Console.WriteLine();
+            foreach (Item item in cart) {
+                Console.WriteLine(item.Label() + " " + item.Weight());
+            }
         }
     }
 }
