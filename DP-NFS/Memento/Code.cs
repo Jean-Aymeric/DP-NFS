@@ -4,31 +4,29 @@ namespace Memento {
 	public class Code {
         public String Text { get; set; }
 
-        public Code(ref String text) {
-			throw new System.NotImplementedException("Not implemented");
+        public Code(String text) {
+			this.Text = text;
 		}
-		public void AddFirst(ref String text) {
-			throw new System.NotImplementedException("Not implemented");
+		public void AddFirst(String text) {
+			this.Text = text + this.Text;
 		}
-		public void AddLast(ref String text) {
-			throw new System.NotImplementedException("Not implemented");
+		public void AddLast(String text) {
+			this.Text += text;
 		}
 		public void Erase() {
-			throw new System.NotImplementedException("Not implemented");
+			this.Text = "";
 		}
-		public void CropLeft(ref int length) {
-			throw new System.NotImplementedException("Not implemented");
+		public void CropLeft(int length) {
+			this.Text = this.Text.Substring(0, length);
 		}
-		public void CropRight(ref int length) {
-			throw new System.NotImplementedException("Not implemented");
+		public void CropRight(int length) {
+			this.Text = this.Text.Substring(this.Text.Length - length, length);
 		}
 		public CodeMemento Save() {
-			throw new System.NotImplementedException("Not implemented");
+			return new CodeMemento(this.Text);
 		}
-		public void Restore(ref CodeMemento memento) {
-			throw new System.NotImplementedException("Not implemented");
+		public void Restore(CodeMemento memento) {
+			this.Text = memento.Text;
 		}
-
 	}
-
 }

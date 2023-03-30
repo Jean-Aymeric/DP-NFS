@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Memento;
+using System;
 
 namespace DP_NFS {
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine("Hello World!");
+            Screen screen = new();
+            screen.Go();
         }
     }
 }
