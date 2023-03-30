@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DP_NFS.Composite {
-    class LeafItem : Item {
+    class LeafItem : Item, Something {
         public LeafItem(string label, double weight) : base(label, weight) { }
 
         public override Item GetItemByLabel(string label) {
@@ -22,6 +22,10 @@ namespace DP_NFS.Composite {
 
         public override IterableItem GetIterableItem() {
             return new IterableItem(this);
+        }
+
+        public override void Visit(Eater eater) {
+            eater.Eat((Something)this);
         }
     }
 }

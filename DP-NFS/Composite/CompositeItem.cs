@@ -57,5 +57,9 @@ namespace DP_NFS.Composite {
             }
             return iterableItems;
         }
+
+        public override void Visit(Eater eater) {
+            eater.Eat(this);
+        }
     }
 }

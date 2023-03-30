@@ -32,5 +32,7 @@ namespace DP_NFS.Composite {
         IEnumerator IEnumerable.GetEnumerator() {
             return this.GetIterableItem().GetEnumerator();
         }
+
+        public abstract void Visit(Eater eater);
     }
 }

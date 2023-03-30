@@ -21,9 +21,7 @@ namespace DP_NFS {
 
             Eater jad = new();
             foreach (Item item in cart) {
-                if (item.GetType().Name == "EdibleLeafItem") {
-                    jad.Eat((EdibleLeafItem)item);
-                }
+                item.Visit(jad);
             }
 
             Console.WriteLine(cart.Label());

@@ -15,5 +15,9 @@ namespace DP_NFS.Composite {
         public override string Label() {
             return base.Label() + "(" + this.Calories + " ca)";
         }
+
+        public override void Visit(Eater eater) {
+            eater.Eat(this);
+        }
     }
 }
