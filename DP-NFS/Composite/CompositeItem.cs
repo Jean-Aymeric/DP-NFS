@@ -6,18 +6,33 @@ using System.Threading.Tasks;
 
 namespace DP_NFS.Composite {
     class CompositeItem : Item {
+        private List<Item> _items;
+        private List<Item> Items { get => CloneList(_items); set => _items = value; }
+
         public CompositeItem(string label, double weight) : base(label, weight) {
             this.Items = new List<Item>();
         }
 
-        private List<Item> Items { get; }
+        public CompositeItem(CompositeItem other) : this(other._label, other._weight) {
+            foreach (Item item in other._items) {
+                this._items.Add(item.Clone());
+            }
+        }
+
+        private static List<Item> CloneList(List<Item> items) {
+            List<Item> result = new();
+            foreach(Item item in items) {
+                result.Add(item.Clone());
+            }
+            return result;
+        }
 
         public void Add(Item item) {
-            this.Items.Add(item);
+            this._items.Add(item);
         }
 
         public void Remove(Item item) {
-            this.Items.Remove(item);
+            this._items.Remove(item);
         }
 
         public override string Label() {
@@ -60,6 +75,10 @@ namespace DP_NFS.Composite {
 
         public override void Visit(Eater eater) {
             eater.Eat(this);
+        }
+
+        public override Item Clone() {
+            return new CompositeItem(this);
         }
     }
 }

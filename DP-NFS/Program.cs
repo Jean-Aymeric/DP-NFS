@@ -18,6 +18,7 @@ namespace DP_NFS {
             tinyBox.Add(new LeafItem("Bague", 0.1));
             tinyBox.Add(new LeafItem("Boucles d'oreille", 0.25));
             Console.WriteLine(cart.Label());
+            CompositeItem cart2 = new CompositeItem(cart);
 
             Eater jad = new();
             foreach (Item item in cart) {
@@ -25,6 +26,7 @@ namespace DP_NFS {
             }
 
             Console.WriteLine(cart.Label());
+            //cart.restore();
         }
     }
 }

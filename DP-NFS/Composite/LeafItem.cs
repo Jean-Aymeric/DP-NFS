@@ -8,6 +8,9 @@ namespace DP_NFS.Composite {
     class LeafItem : Item, Something {
         public LeafItem(string label, double weight) : base(label, weight) { }
 
+        public LeafItem(Item other) : base(other) {
+        }
+
         public override Item GetItemByLabel(string label) {
             return this.Is(label) ? this : null;
         }
@@ -26,6 +29,10 @@ namespace DP_NFS.Composite {
 
         public override void Visit(Eater eater) {
             eater.Eat((Something)this);
+        }
+
+        public override Item Clone() {
+            return new LeafItem(this);
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DP_NFS.Composite {
-    abstract class Item : IEnumerable<Item> {
+    abstract class Item : IEnumerable<Item>, ICloneable {
         protected String _label;
         protected double _weight;
         
@@ -14,6 +14,8 @@ namespace DP_NFS.Composite {
             this._label = label;
             this._weight = weight;
         }
+
+        public Item(Item other) : this(other._label, other._weight) { }
 
         public Boolean Is(String label) {
             return label.Equals(this._label);
@@ -34,5 +36,11 @@ namespace DP_NFS.Composite {
         }
 
         public abstract void Visit(Eater eater);
+
+        public abstract Item Clone();
+
+        object ICloneable.Clone() {
+            return this.Clone();
+        }
     }
 }
