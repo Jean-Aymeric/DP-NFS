@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 
 namespace DP_NFS {
     internal abstract class Drinker {
-        public abstract void Drink(FactoryLiquid factoryLiquid);
+        public abstract void Drink(IFactoryLiquid factoryLiquid);
     }
 }

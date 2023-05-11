@@ -6,10 +6,9 @@ namespace DP_NFS {
         static void Main(string[] args) {
             Drinker coffeDrinker = new CoffeeDrinker();
             Drinker teaDrinker = new TeaDrinker();
-
-            coffeDrinker.Drink(FactoryLiquid.factoryCoffee);
-            coffeDrinker.Drink(FactoryLiquid.factoryDecaffeinated);
-            teaDrinker.Drink(FactoryLiquid.factoryTea);
+            coffeDrinker.Drink(FactoryLiquid.FACTORYCOFFEE);
+            coffeDrinker.Drink(FactoryLiquid.FACTORYDECAFFEINATED);
+            teaDrinker.Drink(FactoryLiquid.FACTORYCOFFEE);
         }
     }
 }

@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace DP_NFS.liquid
 {
-    internal abstract class FactoryLiquid
-    {
-        public static FactoryLiquid FACTORYCOFFEE = new FactoryCoffee();
-        public static FactoryLiquid FACTORYTEA = new FactoryTea();
-        public static FactoryLiquid FACTORYDECAFFEINATED = new FactoryDecaffeinated();
+    internal abstract class FactoryLiquid : IFactoryLiquid {
+        public static IFactoryLiquid FACTORYCOFFEE = new ProxyFactoryLiquid(new FactoryCoffee());
+        public static IFactoryLiquid FACTORYTEA = new ProxyFactoryLiquid(new FactoryTea());
+        public static IFactoryLiquid FACTORYDECAFFEINATED = new ProxyFactoryLiquid(new FactoryDecaffeinated());
 
         public abstract Liquid Make();
     }

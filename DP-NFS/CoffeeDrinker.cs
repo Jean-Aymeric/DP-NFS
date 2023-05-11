@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DP_NFS {
     internal class CoffeeDrinker : Drinker {
-        public override void Drink(FactoryLiquid factoryLiquid) {
+        public override void Drink(IFactoryLiquid factoryLiquid) {
             Console.WriteLine("Je bois du " + factoryLiquid.Make().Name);
         }
     }
