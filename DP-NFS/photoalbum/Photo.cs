@@ -14,5 +14,9 @@ namespace DP_NFS.photoalbum {
             FileName = fileName;
             Description = description;
         }
+
+        public bool GetText() {
+            return this.FileName + " (" + this.Description + ")";
+        }
     }
 }

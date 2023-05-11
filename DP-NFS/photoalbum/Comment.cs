@@ -11,5 +11,9 @@ namespace DP_NFS.photoalbum {
         public Comment(string text) { 
             this.Text = text; 
         }
+
+        public string GetText() {
+            return this.Text;
+        }
     }
 }

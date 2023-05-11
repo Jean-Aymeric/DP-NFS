@@ -6,5 +6,6 @@ using System.Threading.Tasks;
 
 namespace DP_NFS.photoalbum {
     internal interface AlbumElement {
+        bool GetText();
     }
 }

@@ -15,6 +15,11 @@ namespace DP_NFS.photoalbum {
         public void Add(AlbumElement albumElement) {
             albumElements.Add(albumElement);
         }
+
+        public string GetText() {
+            throw new NotImplementedException();
+        }
+
         // Peut contenir des photos, des commentaires et d'autres albums
     }
 }

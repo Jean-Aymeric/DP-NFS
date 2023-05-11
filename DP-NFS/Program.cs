@@ -23,6 +23,8 @@ namespace DP_NFS {
             subAlbum2.Add(new Photo("nunu.jpg", "la tête de Nunu"));
             subAlbum2.Add(new Comment("Les têtes de mes ex"));
             subAlbum.Add(subAlbum2);
+
+            Console.WriteLine(myAlbum.ToString());
         }
     }
 }
