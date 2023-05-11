@@ -12,10 +12,17 @@ namespace DP_NFS {
             myAlbum.Add(new Photo("toto.jpg", "la tête de Toto"));
             myAlbum.Add(new Photo("titi.jpg", "la tête de Titi"));
             myAlbum.Add(new Comment("Les têtes de mes potos"));
+
             Album subAlbum = new Album();
             subAlbum.Add(new Photo("nana.jpg", "la tête de Nana"));
-            subAlbum.Add(new Comment("Les têtes de mes ex"));
+            subAlbum.Add(new Comment("Les têtes de mes nanas"));
             myAlbum.Add(subAlbum);
+
+            Album subAlbum2 = new Album();
+            subAlbum2.Add(new Photo("nini.jpg", "la tête de Nini"));
+            subAlbum2.Add(new Photo("nunu.jpg", "la tête de Nunu"));
+            subAlbum2.Add(new Comment("Les têtes de mes ex"));
+            subAlbum.Add(subAlbum2);
         }
     }
 }
