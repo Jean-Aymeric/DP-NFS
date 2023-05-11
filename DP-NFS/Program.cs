@@ -24,7 +24,12 @@ namespace DP_NFS {
             subAlbum2.Add(new Comment("Les têtes de mes ex"));
             subAlbum.Add(subAlbum2);
 
-            Console.WriteLine(myAlbum.ToString());
+            Console.WriteLine(myAlbum.GetText());
+            // Affiche : [toto.jpg ("la tête de Toto"), titi ... [nana.jpg (), .... [nini.jpg (), ...]]
+
+            for (AlbumElement albumElement : myAlbum) {
+                Console.WriteLine(albumElement.GetText());
+            }
         }
     }
 }
