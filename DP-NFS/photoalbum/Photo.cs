@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DP_NFS.photoalbum {
-    internal class Photo {
+    internal class Photo : AlbumElement {
         public string FileName { get; set; }
 
         public string Description { get; set; }
